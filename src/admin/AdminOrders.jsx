@@ -24,7 +24,7 @@ const AdminOrders = () => {
       body: JSON.stringify({ status })
     });
     if (res.ok) {
-      setOrders(orders.map(order => order._id === id ? { ...order, status } : order));
+      setOrders(orders.map(order => order.id === id ? { ...order, status } : order));
     }
   };
 
@@ -44,15 +44,15 @@ const AdminOrders = () => {
           </thead>
           <tbody>
             {orders.map(order => (
-              <tr key={order._id} style={rowStyle}>
-                <td style={tdStyle}>{order._id.substring(0, 8)}...</td>
-                <td style={tdStyle}>{order.userId?.name || 'Deleted User'}</td>
-                <td style={tdStyle}>₹{order.totalAmount.toFixed(2)}</td>
-                <td style={tdStyle}>{new Date(order.createdAt).toLocaleDateString()}</td>
+              <tr key={order.id} style={rowStyle}>
+                <td style={tdStyle}>{order.id.substring(0, 8)}...</td>
+                <td style={tdStyle}>{order.full_name || 'Deleted User'}</td>
+                <td style={tdStyle}>₹{Number(order.total_amount).toFixed(2)}</td>
+                <td style={tdStyle}>{new Date(order.created_at).toLocaleDateString()}</td>
                 <td style={tdStyle}>
                   <select
                     value={order.status}
-                    onChange={(e) => updateStatus(order._id, e.target.value)}
+                    onChange={(e) => updateStatus(order.id, e.target.value)}
                     style={{ background: '#09090b', color: '#fff', padding: '6px', border: '1px solid #27272a', borderRadius: '4px', outline: 'none' }}
                   >
                     <option value="Pending">Pending</option>

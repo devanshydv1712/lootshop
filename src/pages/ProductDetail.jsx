@@ -15,6 +15,8 @@ const ProductDetail = () => {
     const fetchProduct = async () => {
       try {
         const res = await fetch(`${BASE_URL}/api/products/${id}`); const data = await res.json();
+        console.log(BASE_URL);
+        console.log(id);
         setProduct(data);
       } catch (error) {
         console.error(error);
@@ -31,7 +33,7 @@ const ProductDetail = () => {
         productId: product._id,
         name: product.name,
         price: product.price,
-        imageUrl: product.imageUrl,
+        imageUrl: product.image_url,
         qty: 1
       }));
       alert('Successfully added to your cart!');
@@ -52,7 +54,7 @@ const ProductDetail = () => {
       <div className="product-detail">
         {/* Left Side: Image */}
         <div className="detail-image-container">
-          <img src={product.imageUrl} alt={product.name} className="detail-image" />
+          <img src={product.image_url} alt={product.name} className="detail-image" />
         </div>
 
         {/* Right Side: Information Block */}

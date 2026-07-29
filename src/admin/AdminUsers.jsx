@@ -34,7 +34,7 @@ const AdminUsers = () => {
           <tbody>
             {users.map(u => (
               <tr key={u._id} style={rowStyle}>
-                <td style={tdStyle}>{u._id.substring(0, 8)}...</td>
+                <td style={tdStyle}>{u.id}</td>
                 <td style={tdStyle}>{u.name}</td>
                 <td style={tdStyle}>{u.email}</td>
                 <td style={tdStyle}>
@@ -42,7 +42,7 @@ const AdminUsers = () => {
                     {u.role.toUpperCase()}
                   </span>
                 </td>
-                <td style={tdStyle}>{new Date(u.createdAt).toLocaleDateString()}</td>
+                <td style={tdStyle}>{new Date(u.created_at).toLocaleDateString()}</td>
               </tr>
             ))}
           </tbody>

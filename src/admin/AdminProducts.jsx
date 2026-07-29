@@ -50,14 +50,14 @@ const AdminProducts = () => {
           <tbody>
             {products.map(product => (
               <tr key={product._id} style={rowStyle}>
-                <td style={tdStyle}>{product._id.substring(0, 8)}...</td>
+                <td style={tdStyle}>{product.id.substring(0, 8)}...</td>
                 <td style={tdStyle}>{product.name}</td>
                 <td style={tdStyle}>₹{product.price}</td>
                 <td style={tdStyle}>{product.category}</td>
                 <td style={tdStyle}>{product.stock}</td>
                 <td style={tdStyle}>
-                  <Link to={`/admin/edit-product/${product._id}`} style={editBtn}>Edit</Link>
-                  <button onClick={() => handleDelete(product._id)} style={deleteBtn}>Delete</button>
+                  <Link to={`/admin/edit-product/${product.id}`} style={editBtn}>Edit</Link>
+                  <button onClick={() => handleDelete(product.id)} style={deleteBtn}>Delete</button>
                 </td>
               </tr>
             ))}
