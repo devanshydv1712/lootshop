@@ -52,7 +52,7 @@ const Checkout = () => {
         key: process.env.REACT_APP_RAZORPAY_KEY_ID,
         amount: orderData.amount,
         currency: orderData.currency,
-        name: 'ShopNest',
+        name: 'LootShop',
         description: 'Order Payment',
         order_id: orderData.id,
 
