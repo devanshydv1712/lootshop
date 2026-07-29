@@ -30,7 +30,7 @@ const Footer = () => {
         </div>
         
         <div style={{ color: '#a1a1aa', fontSize: '0.9rem' }}>
-          &copy; {new Date().getFullYear()} ShopNest. All rights reserved.
+          &copy; {new Date().getFullYear()} LootShop. All rights reserved.
         </div>
       </div>
     </footer>
